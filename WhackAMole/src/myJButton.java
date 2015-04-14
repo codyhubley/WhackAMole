@@ -20,8 +20,8 @@ public class myJButton extends JButton implements ActionListener {
     
     boolean clickedOnce;
     boolean clickedTwice;
-    static ImageIcon[] a2 = new ImageIcon[33];
-    static ImageIcon[] b2 = new ImageIcon[33];
+    static ImageIcon[] a2 = new ImageIcon[16];
+    static ImageIcon[] b2 = new ImageIcon[16];
     @SuppressWarnings("LeakingThisInConstructor")
      public myJButton(int i){
         super();
