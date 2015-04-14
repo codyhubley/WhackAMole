@@ -16,7 +16,7 @@ import javax.swing.JPanel;
  *
  * @author szg5293
  */
-public abstract class myJPanel extends JPanel implements ActionListener {
+public class myJPanel extends JPanel implements ActionListener {
     myJButton[] a1;
     myJButton[] b1;
     int check = 0;
@@ -43,6 +43,10 @@ public abstract class myJPanel extends JPanel implements ActionListener {
             add(b1[j]);
             b1[j].addActionListener(this);
         }     
+    }
+
+    myJPanel(MainFrame frame) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void actionPerformed(ActionEvent ae) {
