@@ -25,19 +25,19 @@ public abstract class myJPanel extends JPanel implements ActionListener {
     public myJPanel()
     {
         setBackground(Color.white);
-        this.setPreferredSize(new Dimension (800,600));
-        this.setMinimumSize(new Dimension (800,600));
+        this.setPreferredSize(new Dimension (600,800));
+        this.setMinimumSize(new Dimension (600,800));
         setLayout(new GridLayout(8,8));
-        a1 = new myJButton[33];
+        a1 = new myJButton[16];
          
-        for(int i = 1; i<33; i++)
+        for(int i = 1; i<16; i++)
         {
             a1[i] = new myJButton(i);
             add(a1[i]);
             a1[i].addActionListener(this);
         }
-        b1 = new myJButton[33];
-        for(int j =32; j>0;j--)
+        b1 = new myJButton[16];
+        for(int j =15; j>0;j--)
         {
             b1[j] = new myJButton(j);
             add(b1[j]);
@@ -49,7 +49,7 @@ public abstract class myJPanel extends JPanel implements ActionListener {
         Object o = ae.getSource();
         if(check==2) 
         {
-            for(int y =1; y<33; y++ )
+            for(int y =1; y<16; y++ )
             {
             a1[y].clickedOnce = false;
             b1[y].clickedOnce= false;
@@ -59,7 +59,7 @@ public abstract class myJPanel extends JPanel implements ActionListener {
             }
         }
         
-        for(int z = 1; z<33 ; z++)
+        for(int z = 1; z<16 ; z++)
         {
             if(o == a1[z])
             {
@@ -77,7 +77,7 @@ public abstract class myJPanel extends JPanel implements ActionListener {
             }
         }
         
-        for(int z = 1; z<33 ; z++)
+        for(int z = 1; z<16 ; z++)
         {
             if(o == b1[z])
             {
