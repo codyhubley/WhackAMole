@@ -20,7 +20,6 @@ public class scorePanel extends JPanel
     int score;
     int score2;
     myJPanel mjp;
-    myJPanel2 mjp2;
     timePanel tp;
     JLabel sco;
     public scorePanel()
