@@ -103,17 +103,21 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         //myJPanel theGamePanel = new myJPanel();
         //myJPanel2 theGamePanel = new myJPanel2();
         InstructionPanel theInstructionPanel = new InstructionPanel(frame);
-        
+        myJPanel Gamepanel = new myJPanel(frame);
         if(obj == gameStart) 
           {
             frame.remove(this);
-            //frame.add(theGamePanel);
-            frame.revalidate();            
+            frame.add(Gamepanel);
+            frame.revalidate();
+            validate();
+            repaint();
           }
         if(obj == instructions){
             frame.remove(this);
             frame.add(theInstructionPanel);
             frame.revalidate();
+            validate();
+            repaint();
         }
     }
     
