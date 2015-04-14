@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.Timer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -37,11 +38,14 @@ public class MainMenuPanel extends JPanel implements ActionListener{
     private JLabel OSU;
     private ImageIcon PSUIcon;
     private ImageIcon OSUIcon;
+    timePanel t = new timePanel();
+     MainFrame mjf;
     
     MainMenuPanel(MainFrame frame){
         
         this.frame = frame;
-        
+        t.tim = new Timer(t.delay,this);
+         
         this.setLayout(null);
         this.setBackground(Color.white);
         this.setSize(600, 800);
@@ -109,15 +113,28 @@ public class MainMenuPanel extends JPanel implements ActionListener{
             frame.remove(this);
             frame.add(Gamepanel);
             frame.revalidate();
-            validate();
             repaint();
           }
         if(obj == instructions){
             frame.remove(this);
             frame.add(theInstructionPanel);
             frame.revalidate();
-            validate();
             repaint();
+        }
+        
+        if(obj == t.tim){
+           // .setBounds(200, 120, 300, 50);
+           //.setFont(new Font("Showcard Gothic", Font.PLAIN, 25));
+          // .setForeground(Color.RED);
+           // .setText("Game starts in: " +t.j);
+            t.ti.setText(t.i+" ");
+            t.j--;
+            t.i--;
+            if(t.j < 0)
+            {
+                mjf.swap();
+            }
+            
         }
     }
     
