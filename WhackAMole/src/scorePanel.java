@@ -26,8 +26,6 @@ public class scorePanel extends JPanel
     {
         setBackground(Color.white);
         setLayout(new BorderLayout());
-        
-        
         sco = new JLabel();
         sco.setText("m");
         add(sco);
