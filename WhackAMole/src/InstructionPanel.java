@@ -44,8 +44,8 @@ public class InstructionPanel extends JPanel implements ActionListener{
         gameName.setFont(new Font("Courier New", Font.BOLD, 32));
         edition = new JLabel("Penn State Edition");  
         back = new JButton("Back");
-        PSUIcon = new ImageIcon("PSUIcon.png");
-        OSUIcon = new ImageIcon("OSUIcon.png");
+        PSUIcon = new ImageIcon("src/PSUIcon.png");
+        OSUIcon = new ImageIcon("src/OSUIcon.png");
         PSU = new JLabel();
         OSU = new JLabel();
         PSU.setIcon(PSUIcon);
