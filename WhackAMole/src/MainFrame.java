@@ -15,10 +15,7 @@ import javax.swing.WindowConstants;
 public class MainFrame extends JFrame{
     
     private final MainMenuPanel theMainMenuPanel;
-     myJPanel mjp;
-     MainMenuPanel frame;
-    scorePanel s;
-    
+
     MainFrame(){
         
         theMainMenuPanel = new MainMenuPanel(this);
@@ -31,16 +28,5 @@ public class MainFrame extends JFrame{
         this.add(theMainMenuPanel);
         
     }
-    
-    public void swap()
-    {
-        remove(frame);
-        add(mjp.s,"North");
-        add(mjp, "Center");
-     
-        pack();
-        revalidate();
-        repaint();
-    }
-    
+
 }
