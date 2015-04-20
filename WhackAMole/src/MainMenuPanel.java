@@ -53,8 +53,8 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         gameName = new JLabel("Whack-a-Mole");
         gameName.setFont(new Font("Courier New", Font.BOLD, 32));
         edition = new JLabel("Penn State Edition");    
-        PSUIcon = new ImageIcon("src/PSUIcon.png");
-        OSUIcon = new ImageIcon("src/OSUIcon.png");
+        PSUIcon = new ImageIcon(this.getClass().getResource("PSUIcon.png"));
+        OSUIcon = new ImageIcon(this.getClass().getResource("OSUIcon.png"));
         PSU = new JLabel();
         OSU = new JLabel();
         PSU.setIcon(PSUIcon);
