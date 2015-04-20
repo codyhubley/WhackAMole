@@ -84,7 +84,8 @@ public class InstructionPanel extends JPanel implements ActionListener{
           {
             frame.remove(this);
             frame.add(theMainMenuPanel);
-            frame.revalidate();            
+            frame.revalidate();   
+            frame.repaint();
           }
     }
     
