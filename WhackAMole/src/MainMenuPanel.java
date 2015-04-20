@@ -39,7 +39,7 @@ public class MainMenuPanel extends JPanel implements ActionListener{
     private ImageIcon PSUIcon;
     private ImageIcon OSUIcon;
     timePanel t = new timePanel();
-     MainFrame mjf;
+    MainFrame mjf;
     
     MainMenuPanel(MainFrame frame){
         
@@ -107,35 +107,37 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         //myJPanel theGamePanel = new myJPanel();
         //myJPanel2 theGamePanel = new myJPanel2();
         InstructionPanel theInstructionPanel = new InstructionPanel(frame);
-        myJPanel Gamepanel = new myJPanel(frame);
+        //myJPanel Gamepanel = new myJPanel();
+        TopPanel theTopPanel = new TopPanel();
         if(obj == gameStart) 
           {
             frame.remove(this);
-            frame.add(Gamepanel);
+            frame.add(theTopPanel);
+            //frame.add(Gamepanel);
             frame.revalidate();
-            repaint();
+            frame.repaint();
           }
         if(obj == instructions){
             frame.remove(this);
             frame.add(theInstructionPanel);
             frame.revalidate();
-            repaint();
+            frame.repaint();
         }
         
-        if(obj == t.tim){
-           // .setBounds(200, 120, 300, 50);
-           //.setFont(new Font("Showcard Gothic", Font.PLAIN, 25));
-          // .setForeground(Color.RED);
-           // .setText("Game starts in: " +t.j);
-            t.ti.setText(t.i+" ");
-            t.j--;
-            t.i--;
-            if(t.j < 0)
-            {
-                mjf.swap();
-            }
-            
-        }
+//        if(obj == t.tim){
+//           // .setBounds(200, 120, 300, 50);
+//           //.setFont(new Font("Showcard Gothic", Font.PLAIN, 25));
+//          // .setForeground(Color.RED);
+//           // .setText("Game starts in: " +t.j);
+//            t.ti.setText(t.i+" ");
+//            t.j--;
+//            t.i--;
+//            if(t.j < 0)
+//            {
+//                mjf.swap();
+//            }
+//            
+//        }
     }
     
 }
