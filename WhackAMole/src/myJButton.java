@@ -17,17 +17,12 @@ import javax.swing.JButton;
 public class myJButton extends JButton implements ActionListener {
         
     int num;
-    
-    boolean clickedOnce;
-    boolean clickedTwice;
     static ImageIcon[] a2 = new ImageIcon[16];
     static ImageIcon[] b2 = new ImageIcon[16];
-    @SuppressWarnings("LeakingThisInConstructor")
-     public myJButton(int i){
+    public myJButton(int i){
         super();
         
         a2[0] = new ImageIcon(this.getClass().getResource("OsuLogo.png"));
-        
         b2[0] = new ImageIcon(this.getClass().getResource("PsuLogo.png"));
         
         addActionListener(this);
@@ -38,9 +33,6 @@ public class myJButton extends JButton implements ActionListener {
       public void hideNum(){
           this.setText("");
       }
-      public void match(){
-          this.setVisible(false);
-    }
     
     @Override
     public void actionPerformed(ActionEvent e) {
