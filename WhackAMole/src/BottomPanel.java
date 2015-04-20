@@ -32,25 +32,23 @@ public class BottomPanel extends JPanel implements ActionListener {
         this.setSize(600, 200);
         this.setVisible(true);
         this.setBounds(0, 200, 600, 600);
-        setLayout(new GridLayout(8,8));
+        setLayout(new GridLayout(4,4));
         a1 = new myJButton[17];
          
-       /* for(int i = 1; i<17; i++)
+        for(int i = 1; i<9; i++)
         {
             a1[i] = new myJButton(i);
             add(a1[i]);
             a1[i].addActionListener(this);
         }
         
-        b1 = new myJButton[17];
-        for(int j =16; j>0;j--)
+        b1 = new myJButton[9];
+        for(int j =8; j>0;j--)
         {
             b1[j] = new myJButton(j);
             add(b1[j]);
             b1[j].addActionListener(this);
         }
-     
-   */
     }
 
     @Override
