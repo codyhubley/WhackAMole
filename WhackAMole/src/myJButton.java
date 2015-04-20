@@ -26,9 +26,9 @@ public class myJButton extends JButton implements ActionListener {
      public myJButton(int i){
         super();
         
-        a2[0] = new ImageIcon(this.getClass().getResource("/Images/osulogo.png"));
+        a2[0] = new ImageIcon(this.getClass().getResource("OsuLogo.png"));
         
-        b2[0] = new ImageIcon(this.getClass().getResource("/Images/psulogo.png"));
+        b2[0] = new ImageIcon(this.getClass().getResource("PsuLogo.png"));
         
         addActionListener(this);
      }
@@ -45,12 +45,5 @@ public class myJButton extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
-        if(o == this && clickedOnce == true){
-            clickedTwice = true;
-            
-            if(clickedTwice){
-               
-            }
         }
-}
 }
