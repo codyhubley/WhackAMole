@@ -22,6 +22,7 @@ public class MainFrame extends JFrame{
     MainFrame(){
         
         theMainMenuPanel = new MainMenuPanel(this);
+        this.setLayout(null);
         this.setSize(600, 800);
         this.setVisible(true);
         this.setResizable(false);
