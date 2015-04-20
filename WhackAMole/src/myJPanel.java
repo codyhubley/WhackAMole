@@ -45,9 +45,9 @@ public class myJPanel extends JPanel implements ActionListener {
         }     
     }
 
-    myJPanel(MainFrame frame) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    myJPanel(MainFrame frame) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     public void actionPerformed(ActionEvent ae) {
         Object o = ae.getSource();
