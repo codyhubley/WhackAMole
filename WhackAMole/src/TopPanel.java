@@ -23,6 +23,8 @@ import javax.swing.border.LineBorder;
  */
 public class TopPanel extends JPanel implements ActionListener {
     
+    private MainMenuPanel main;
+    private BottomPanel bottom;
     private MainFrame frame;
     private JLabel timeLabel;
     private JLabel scoreLabel;
@@ -34,7 +36,7 @@ public class TopPanel extends JPanel implements ActionListener {
     private int timeLeft;
     private int scoreTotal;
     
-    TopPanel(){
+    TopPanel(MainMenuPanel main, BottomPanel bottom){
         
         this.setLayout(null);
         this.setBackground(Color.white);
@@ -42,6 +44,8 @@ public class TopPanel extends JPanel implements ActionListener {
         this.setVisible(true);
         this.setBounds(0, 0, 600, 200);
         
+        this.main = main;
+        this.bottom = bottom;
         timeLabel = new JLabel("Time:");
         scoreLabel = new JLabel("Score:");
         time = new JLabel();
@@ -78,6 +82,7 @@ public class TopPanel extends JPanel implements ActionListener {
         Object obj = e.getSource();
         if(obj == start) 
           {
+              bottom.timer.start();
               timer = new Timer(1000, this);             
               start.setEnabled(false);
               timeLeft = 45;
@@ -85,7 +90,7 @@ public class TopPanel extends JPanel implements ActionListener {
               timer.start();  
               scoreTotal = 0;
               score.setText(""+scoreTotal);
-              
+              System.out.println(main.getDifficulty());
               //enable game buttons here
                             
               
