@@ -30,6 +30,7 @@ public class MainMenuPanel extends JPanel implements ActionListener{
     private JRadioButton easy;
     private JRadioButton medium;
     private JRadioButton hard;
+    private String diff;
     private JLabel gameName;
     private JLabel edition;
     private JButton gameStart;
@@ -38,13 +39,13 @@ public class MainMenuPanel extends JPanel implements ActionListener{
     private JLabel OSU;
     private ImageIcon PSUIcon;
     private ImageIcon OSUIcon;
-    timePanel t = new timePanel();
-    MainFrame mjf;
+//    timePanel t = new timePanel();
+//    MainFrame mjf;
     
     MainMenuPanel(MainFrame frame){
         
         this.frame = frame;
-        t.tim = new Timer(t.delay,this);
+//        t.tim = new Timer(t.delay,this);
          
         this.setLayout(null);
         this.setBackground(Color.white);
@@ -74,14 +75,18 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         instructions = new JButton("Instructions");
         gameStart = new JButton("Start Game");
         
+        
         gameName.setBounds(new Rectangle(180,20,300,50));
         edition.setBounds(new Rectangle(238,40,130,50));
         PSU.setBounds(new Rectangle(300,100,230,230));
         OSU.setBounds(new Rectangle(50,100,230,230));
         gameDifficulty.setBounds(new Rectangle(250,350,100,50));
         easy.setBounds(new Rectangle(250,400,100,50));
+        easy.setActionCommand("easy");
         medium.setBounds(new Rectangle(250,450,100,50));
+        medium.setActionCommand("medium");
         hard.setBounds(new Rectangle(250,500,100,50));
+        hard.setActionCommand("hard");
         instructions.setBounds(new Rectangle(125,575,350,50));
         gameStart.setBounds(new Rectangle(125,650,350,50));
         
@@ -99,6 +104,8 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         gameStart.addActionListener(this);
         instructions.addActionListener(this);
         
+        diff = difficulty.getSelection().getActionCommand();
+        
     }
     
     public void actionPerformed(ActionEvent e){
@@ -108,8 +115,11 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         //myJPanel2 theGamePanel = new myJPanel2();
         InstructionPanel theInstructionPanel = new InstructionPanel(frame);
         //myJPanel Gamepanel = new myJPanel();
-        TopPanel theTopPanel = new TopPanel();
-        BottomPanel theBottomPanel = new BottomPanel();
+        
+        
+        BottomPanel theBottomPanel = new BottomPanel(difficulty.getSelection().getActionCommand());
+        TopPanel theTopPanel = new TopPanel(this, theBottomPanel);
+        System.out.println(difficulty.getSelection().getActionCommand());
         if(obj == gameStart) 
           {
             frame.remove(this);
@@ -125,20 +135,10 @@ public class MainMenuPanel extends JPanel implements ActionListener{
             frame.repaint();
         }
         
-//        if(obj == t.tim){
-//           // .setBounds(200, 120, 300, 50);
-//           //.setFont(new Font("Showcard Gothic", Font.PLAIN, 25));
-//          // .setForeground(Color.RED);
-//           // .setText("Game starts in: " +t.j);
-//            t.ti.setText(t.i+" ");
-//            t.j--;
-//            t.i--;
-//            if(t.j < 0)
-//            {
-//                mjf.swap();
-//            }
-//            
-//        }
+    }
+    
+    public String getDifficulty(){
+        return difficulty.getSelection().getActionCommand();
     }
     
 }
