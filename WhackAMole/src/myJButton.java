@@ -22,11 +22,10 @@ public class myJButton extends JButton {
         super();
         num = Math.random();
         
-  
         this.setOpaque(false);
         this.setVisible(true);
         this.setIcon(null);
-        setContentAreaFilled(false);
+        setContentAreaFilled(true);
         setBorderPainted(true);
         
         
