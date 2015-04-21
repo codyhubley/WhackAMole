@@ -37,7 +37,7 @@ public class BottomPanel extends JPanel implements ActionListener {
          
         for(int i = 1; i<9; i++)
         {
-            a1[i] = new myJButton(i);
+            a1[i] = new myJButton();
             add(a1[i]);
             a1[i].addActionListener(this);
         }
@@ -45,7 +45,7 @@ public class BottomPanel extends JPanel implements ActionListener {
         b1 = new myJButton[9];
         for(int j =8; j>0;j--)
         {
-            b1[j] = new myJButton(j);
+            b1[j] = new myJButton();
             add(b1[j]);
             b1[j].addActionListener(this);
         }
