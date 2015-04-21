@@ -14,28 +14,31 @@ import javax.swing.JButton;
  *
  * @author szg5293
  */
-public class myJButton extends JButton implements ActionListener {
-        
-    int num;
-    static ImageIcon[] a2 = new ImageIcon[16];
-    static ImageIcon[] b2 = new ImageIcon[16];
-    public myJButton(int i){
+public class myJButton extends JButton {
+
+    private double num;
+
+    public myJButton() {
         super();
+        num = Math.random();
         
-        a2[0] = new ImageIcon(this.getClass().getResource("OsuLogo.png"));
-        b2[0] = new ImageIcon(this.getClass().getResource("PsuLogo.png"));
+  
+        this.setOpaque(false);
+        this.setVisible(true);
+        this.setIcon(null);
+        setContentAreaFilled(false);
+        setBorderPainted(true);
         
-        addActionListener(this);
-     }
-      public void showNum(){
-          this.setText(""+num);
+        
     }
-      public void hideNum(){
-          this.setText("");
-      }
     
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Object o = e.getSource();
+       void setVisible(){
+       if (num < 0.5) {
+            setIcon(new ImageIcon(this.getClass().getResource("OsuLogo.Jpg")));
+        } 
+        else {
+            setIcon(new ImageIcon(this.getClass().getResource("PsuLogo.png")));
         }
-}
+       }
+     }
+   
