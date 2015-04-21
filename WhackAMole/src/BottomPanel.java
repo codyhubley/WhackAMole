@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -24,14 +25,31 @@ public class BottomPanel extends JPanel implements ActionListener {
      myJButton[] b1;
      int check = 0;
      int i=0;
+     String difficulty;
+     Timer timer;
+     int speed;
     
-    public BottomPanel(){
+    public BottomPanel(String difficulty){
+        
+        this.difficulty = difficulty;
+        
+        switch(difficulty){
+            case "easy": speed = 2000;
+                break;
+            case "medium": speed = 1000;
+                break;
+            case "hard": speed = 500;
+                break;
+        }
+        
+        timer = new Timer(speed,this);
+        //timer.addActionListener(this);
         
         this.setLayout(null);
         this.setBackground(Color.white);
         this.setSize(600, 200);
         this.setVisible(true);
-        this.setBounds(0, 200, 600, 600);
+        this.setBounds(0, 200, 590, 560);
         setLayout(new GridLayout(4,4));
         a1 = new myJButton[17];
          
@@ -51,8 +69,14 @@ public class BottomPanel extends JPanel implements ActionListener {
         }
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     @Override
+    public void actionPerformed(ActionEvent e){
+        
+        Object obj = e.getSource();
+        
+        if(obj == timer)
+        {
+            System.out.println("hi");
+        }
     }
 }
