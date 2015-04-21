@@ -52,8 +52,9 @@ public class TopPanel extends JPanel implements ActionListener {
         scoreLabel.setFont(new Font("Courier New", Font.BOLD, 32));
         score.setFont(new Font("Courier New", Font.BOLD, 32));
         
-        Border border = LineBorder.createBlackLineBorder();//        border.
+        Border border = LineBorder.createBlackLineBorder();
         score.setBorder(border);
+        time.setBorder(border);
         
         start = new JButton("Start");
         this.add(start);
@@ -62,10 +63,12 @@ public class TopPanel extends JPanel implements ActionListener {
         this.add(time);
         this.add(score);
         start.setBounds(new Rectangle(0,0,600,50));
-        timeLabel.setBounds(new Rectangle(100,50,100,50));
+        timeLabel.setBounds(new Rectangle(100,50,120,50));
         scoreLabel.setBounds(new Rectangle(400,50,120,50));
-        time.setBounds(new Rectangle(100,120,50,50));
-        score.setBounds(new Rectangle(400,120,120,50));
+        time.setBounds(new Rectangle(100,100,90,90));
+        score.setBounds(new Rectangle(410,100,90,90));
+        time.setHorizontalAlignment(JLabel.CENTER);
+        score.setHorizontalAlignment(JLabel.CENTER);
         start.addActionListener(this);
         
     }
@@ -75,7 +78,7 @@ public class TopPanel extends JPanel implements ActionListener {
         Object obj = e.getSource();
         if(obj == start) 
           {
-              timer = new Timer(100, this);             
+              timer = new Timer(1000, this);             
               start.setEnabled(false);
               timeLeft = 45;
               time.setText(""+timeLeft);
