@@ -122,7 +122,7 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         theBottomPanel = new BottomPanel(difficulty.getSelection().getActionCommand(), theTopPanel);
         theTopPanel = new TopPanel(this, theBottomPanel);
         theBottomPanel.getTop(theTopPanel);
-        System.out.println(difficulty.getSelection().getActionCommand());
+        //System.out.println(difficulty.getSelection().getActionCommand());
         if(obj == gameStart) 
           {
             frame.remove(this);
