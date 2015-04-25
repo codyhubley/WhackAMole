@@ -39,6 +39,8 @@ public class MainMenuPanel extends JPanel implements ActionListener{
     private JLabel OSU;
     private ImageIcon PSUIcon;
     private ImageIcon OSUIcon;
+    private TopPanel theTopPanel;
+    private BottomPanel theBottomPanel;
 //    timePanel t = new timePanel();
 //    MainFrame mjf;
     
@@ -117,8 +119,9 @@ public class MainMenuPanel extends JPanel implements ActionListener{
         //myJPanel Gamepanel = new myJPanel();
         
         
-        BottomPanel theBottomPanel = new BottomPanel(difficulty.getSelection().getActionCommand());
-        TopPanel theTopPanel = new TopPanel(this, theBottomPanel);
+        theBottomPanel = new BottomPanel(difficulty.getSelection().getActionCommand(), theTopPanel);
+        theTopPanel = new TopPanel(this, theBottomPanel);
+        theBottomPanel.getTop(theTopPanel);
         System.out.println(difficulty.getSelection().getActionCommand());
         if(obj == gameStart) 
           {
