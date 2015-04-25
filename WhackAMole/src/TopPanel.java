@@ -82,7 +82,7 @@ public class TopPanel extends JPanel implements ActionListener {
         Object obj = e.getSource();
         if(obj == start) 
           {
-              bottom.timer.start();
+              bottom.startTimer();
               bottom.setTimeLeft(45);
               timer = new Timer(1000, this);             
               start.setEnabled(false);
@@ -91,7 +91,7 @@ public class TopPanel extends JPanel implements ActionListener {
               timer.start();  
               scoreTotal = 0;
               score.setText(""+scoreTotal);
-              System.out.println(main.getDifficulty());
+              //System.out.println(main.getDifficulty());
               //enable game buttons here
                             
               
@@ -128,5 +128,9 @@ public class TopPanel extends JPanel implements ActionListener {
     
     public int getScore(){
         return scoreTotal;
+    }
+    
+    public int getTime(){
+        return timeLeft;
     }
 }
