@@ -83,6 +83,7 @@ public class TopPanel extends JPanel implements ActionListener {
         if(obj == start) 
           {
               bottom.timer.start();
+              bottom.setTimeLeft(45);
               timer = new Timer(1000, this);             
               start.setEnabled(false);
               timeLeft = 45;
@@ -106,11 +107,26 @@ public class TopPanel extends JPanel implements ActionListener {
                 timer.stop();
                 start.setEnabled(true);
             }
-            if(timeLeft == 20){
-                scoreTotal += 500;
-                score.setText(""+scoreTotal);
-            }
+//            if(timeLeft == 43){
+//                changeScore(10);
+//                score.setText(""+scoreTotal);
+//            }
+//            if(timeLeft == 42){
+//                changeScore(-10);
+//                score.setText(""+scoreTotal);
+//            }
         }
     }
     
+    public void changeScore(int change){
+        scoreTotal += change;
+    }
+    
+    public void changeScoreLabel(){
+        score.setText(""+scoreTotal);
+    }
+    
+    public int getScore(){
+        return scoreTotal;
+    }
 }
