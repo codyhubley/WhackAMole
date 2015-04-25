@@ -28,7 +28,7 @@ public class BottomPanel extends JPanel implements ActionListener {
      private int check = 0;
      private int i=0;
      private String difficulty;
-     Timer timer;
+     private Timer timer;
      private int speed;
      private Random random;
      private int rand;
@@ -80,7 +80,7 @@ public class BottomPanel extends JPanel implements ActionListener {
             for(int i = 1; i<17; i++){
                 this.remove(a1[i]);
             }
-            if(timeLeft > 0){
+            if(top.getTime() > 0){
                 timeLeft --;
             }
             else{
@@ -103,7 +103,6 @@ public class BottomPanel extends JPanel implements ActionListener {
             }
             random = new Random();
             rand = random.nextInt(16) + 1;
-            System.out.println(16);
             a1[rand].setVisible(true);
             this.revalidate();
             this.repaint();
@@ -310,5 +309,9 @@ public class BottomPanel extends JPanel implements ActionListener {
     
     public void setTimeLeft(int time){
         timeLeft = time;
+    }
+    
+    public void startTimer(){
+        timer.start();
     }
 }
